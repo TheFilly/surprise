@@ -1,0 +1,325 @@
+:root {
+  --cream: #fff9f3;
+  --cream-deep: #f9eee8;
+  --rose: #dca6ae;
+  --rose-dark: #a86270;
+  --rose-soft: #f4d9d8;
+  --ink: #5b4249;
+  --muted: #8b6b71;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  overflow: hidden;
+  padding: 28px 18px;
+  background:
+    radial-gradient(circle at 14% 14%, rgba(255, 255, 255, 0.78) 0 7%, transparent 7.5%),
+    radial-gradient(circle at 84% 86%, rgba(255, 255, 255, 0.62) 0 8%, transparent 8.5%),
+    linear-gradient(145deg, var(--cream) 0%, var(--cream-deep) 100%);
+}
+
+.card {
+  position: relative;
+  width: min(100%, 560px);
+  min-height: 480px;
+  padding: 78px clamp(24px, 8vw, 68px) 58px;
+  border: 1px solid rgba(220, 166, 174, 0.38);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.73);
+  box-shadow: 0 24px 65px rgba(139, 107, 113, 0.14);
+  text-align: center;
+  isolation: isolate;
+}
+
+.gift-card {
+  min-height: 560px;
+  padding-top: 72px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--rose-dark);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 9vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.gift-card h1 {
+  font-size: clamp(2.35rem, 7vw, 3.8rem);
+}
+
+.intro {
+  margin: 25px 0 7px;
+  font-size: clamp(1.1rem, 3vw, 1.35rem);
+  line-height: 1.45;
+}
+
+.subline {
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.code-form {
+  display: grid;
+  gap: 12px;
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+input {
+  width: 100%;
+  border: 1px solid rgba(168, 98, 112, 0.28);
+  border-radius: 14px;
+  padding: 14px 16px;
+  color: var(--ink);
+  background: rgba(255, 249, 243, 0.8);
+  outline: none;
+  text-align: center;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+input::placeholder {
+  color: #b4979a;
+}
+
+input:focus {
+  border-color: var(--rose-dark);
+  box-shadow: 0 0 0 4px rgba(220, 166, 174, 0.2);
+}
+
+button {
+  border: 0;
+  border-radius: 14px;
+  padding: 14px 18px;
+  color: var(--white);
+  background: var(--rose-dark);
+  box-shadow: 0 9px 18px rgba(168, 98, 112, 0.2);
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+button:hover {
+  background: #995a68;
+  box-shadow: 0 12px 24px rgba(168, 98, 112, 0.26);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.error-message {
+  margin: 2px 0 0;
+  color: #a24958;
+  font-size: 0.9rem;
+}
+
+.gift-image-wrap {
+  display: grid;
+  min-height: 205px;
+  margin: 28px auto 0;
+  overflow: hidden;
+  place-items: center;
+  border: 1px solid rgba(220, 166, 174, 0.3);
+  border-radius: 20px;
+  background: rgba(249, 238, 232, 0.75);
+}
+
+.gift-image-wrap img {
+  display: block;
+  width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+}
+
+.image-placeholder {
+  min-height: 205px;
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.balloon {
+  position: absolute;
+  z-index: -1;
+  width: 52px;
+  height: 66px;
+  border-radius: 50% 50% 46% 46%;
+  opacity: 0.8;
+  animation: float 5.6s ease-in-out infinite;
+}
+
+.balloon::before {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: inherit;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.balloon span {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  width: 1px;
+  height: 100px;
+  background: rgba(168, 98, 112, 0.34);
+  transform: translateX(-50%) rotate(4deg);
+  transform-origin: top;
+}
+
+.balloon-one {
+  top: 30px;
+  left: 32px;
+  background: var(--rose-soft);
+  animation-delay: -1.7s;
+}
+
+.balloon-two {
+  top: 48px;
+  right: 30px;
+  width: 45px;
+  height: 58px;
+  background: #e8c2b5;
+  animation-delay: -3.2s;
+}
+
+.balloon-three {
+  right: 78px;
+  bottom: 24px;
+  width: 38px;
+  height: 49px;
+  background: #eed8ba;
+  animation-delay: -4.4s;
+}
+
+.balloon-three span {
+  top: 53px;
+  height: 54px;
+}
+
+.confetti {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  width: 9px;
+  height: 16px;
+  border-radius: 3px;
+  animation: fall 1s cubic-bezier(0.22, 0.7, 0.35, 1) forwards;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-13px) rotate(4deg);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(var(--drift), 110vh, 0) rotate(var(--rotation));
+    opacity: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .page {
+    padding: 16px;
+  }
+
+  .card {
+    min-height: 460px;
+    padding: 72px 22px 45px;
+  }
+
+  .gift-card {
+    min-height: 510px;
+    padding-top: 66px;
+  }
+
+  .balloon-one {
+    left: 18px;
+  }
+
+  .balloon-two {
+    right: 16px;
+  }
+
+  .balloon-three {
+    right: 62px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

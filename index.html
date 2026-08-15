@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Eine kleine Überraschung wartet auf dich."
+    />
+    <title>Eine kleine Überraschung</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page page-entry">
+    <main class="card" aria-labelledby="page-title">
+      <div class="balloon balloon-one" aria-hidden="true"><span></span></div>
+      <div class="balloon balloon-two" aria-hidden="true"><span></span></div>
+      <div class="balloon balloon-three" aria-hidden="true"><span></span></div>
+
+      <p class="eyebrow">Eine kleine Geschenk-Etappe</p>
+      <h1 id="page-title">Huhu</h1>
+      <p class="intro">Gib hier das gefundene Codewort ein</p>
+      <p class="subline">Mal sehen, ob du wirklich gut gesucht hast …</p>
+
+      <form id="code-form" class="code-form">
+        <label class="sr-only" for="codeword">Codewort</label>
+        <input
+          id="codeword"
+          name="codeword"
+          type="text"
+          autocomplete="off"
+          autocapitalize="none"
+          spellcheck="false"
+          placeholder="Codewort"
+          required
+        />
+        <button type="submit">Los geht’s</button>
+        <p id="error-message" class="error-message" role="alert" hidden>
+          Falsches Codewort
+        </p>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
