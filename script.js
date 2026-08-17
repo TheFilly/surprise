@@ -53,7 +53,7 @@ if (giftImage && imagePlaceholder) {
 const confetti = document.querySelector("#confetti");
 
 if (confetti) {
-  const colors = ["#dca6ae", "#e8c2b5", "#eed8ba", "#c7d9d0", "#f4d9d8"];
+  const colors = ["#e887a2", "#efa9bf", "#f5bfd0", "#c7d9d0", "#f7b9cb"];
 
   for (let index = 0; index < 54; index += 1) {
     const piece = document.createElement("span");
